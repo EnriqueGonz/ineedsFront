@@ -17,7 +17,7 @@ class _HomeState extends State<Home> {
     super.initState();
     getEmpresas();
   }
-  final String url = 'https://57507136.ngrok.io/distribuidora/distribuidoras/';
+  final String url = 'https://4d7b4390.ngrok.io/distribuidora/distribuidoras/';
   final token='c009bf67579fd5b2c8a6ab432c8ad006af685e09';
   List data;
 

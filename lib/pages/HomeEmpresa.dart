@@ -15,7 +15,7 @@ class _HomeEmpresaState extends State<HomeEmpresa> {
     super.initState();
     getClientes();
   }
-  final String url = 'https://9860631b.ngrok.io/cliente/clientes/';
+  final String url = 'https://4d7b4390.ngrok.io/cliente/clientes/';
   final token='c009bf67579fd5b2c8a6ab432c8ad006af685e09';
   List data;
 
@@ -124,16 +124,16 @@ class _HomeEmpresaState extends State<HomeEmpresa> {
                           child: Column(
                             children: <Widget>[
 
-                              Text(data[index]["nombreTitular"],
+                              Text('Cliente: '+data[index]["nombreTitular"],
                                   style: TextStyle(
                                       fontSize: 18.0, color: Colors.black87)),
-                              Text(data[index]["nombreLocal"],
+                              Text('Nombre del local: '+data[index]["nombreLocal"],
                                   style: TextStyle(
                                       fontSize: 18.0, color: Colors.black87)),
-                              Text(data[index]["direccionLocal"],
+                              Text('Direccion: '+data[index]["direccionLocal"],
                                   style: TextStyle(
                                       fontSize: 18.0, color: Colors.black87)),
-                              Text(data[index]["referenciaLocal"],
+                              Text('Referencia: '+data[index]["referenciaLocal"],
                                   style: TextStyle(
                                       fontSize: 18.0, color: Colors.black87)),
                             ],

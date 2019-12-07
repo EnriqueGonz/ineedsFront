@@ -19,7 +19,7 @@ class _VistaProductosState extends State<VistaProductos> {
     super.initState();
     getProducto();
   }
-  final String url = 'https://57507136.ngrok.io/producto/productosCliente/';
+  final String url = 'https://4d7b4390.ngrok.io/producto/productosCliente/';
   final token='c009bf67579fd5b2c8a6ab432c8ad006af685e09';
   List data;
 
@@ -40,7 +40,7 @@ class _VistaProductosState extends State<VistaProductos> {
   }
   Future<String> peticionPedido(String id,String cantidad) async {
     print('Recivo:'+id+cantidad);
-    http.Response response = await http.post(Uri.encodeFull('https://57507136.ngrok.io/pedido/pedidos/'),
+    http.Response response = await http.post(Uri.encodeFull('https://4d7b4390.ngrok.io/pedido/pedidos/'),
         body: {
         'producto_id' : id,
         'cliente_id'  : '1',
