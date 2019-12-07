@@ -1,39 +1,45 @@
 import 'package:flutter/material.dart';
+import 'package:ineed/pages/RegistroLocal.dart';
+import 'package:ineed/pages/RegistroEmpresa.dart';
 import 'package:http/http.dart' as http;
+import 'package:ineed/pages/HomeEmpresa.dart';
 import 'dart:async';
 import 'dart:convert';
-import 'dart:core';
-import 'package:ineed/pages/PedidosPorCliente.dart';
 
-class HomeEmpresa extends StatefulWidget {
+class PedidosPorCliente extends StatefulWidget {
+  var idPedido;
+  PedidosPorCliente(this.idPedido);
+
   @override
-  _HomeEmpresaState createState() => new _HomeEmpresaState();
+
+  _PedidoPorClienteState createState() => new _PedidoPorClienteState();
 }
-List data;
-class _HomeEmpresaState extends State<HomeEmpresa> {
+
+class _PedidoPorClienteState extends State<PedidosPorCliente> {
   void initState() {
     super.initState();
+
     getClientes();
   }
-  final String url = 'https://9860631b.ngrok.io/cliente/clientes/';
+  final String url = 'https://f55d3809.ngrok.io/pedido/pedidosCliente/';
   final token='c009bf67579fd5b2c8a6ab432c8ad006af685e09';
   List data;
 
   Future<String> getClientes() async {
 
-    http.Response response = await http.get(Uri.encodeFull(url),
+    http.Response response = await http.get(Uri.encodeFull(url+widget.idPedido.toString()),
         headers: {
           "Authorization": "Token " + token,
           "Accept": "application/json"
         });
     setState(() {
       data = json.decode(response.body);
+      print(data);
     });
   }
-
+  @override
   @override
   Widget build(BuildContext context) {
-
     return new Scaffold(
       drawer: Theme(
           data: Theme.of(context).copyWith(canvasColor: Color.fromRGBO(43, 57, 62, 10)),
@@ -123,24 +129,26 @@ class _HomeEmpresaState extends State<HomeEmpresa> {
                         child: FlatButton(
                           child: Column(
                             children: <Widget>[
+                              Text((data[index]["producto_id"].toString()),
+                                  style: TextStyle(
+                                      fontSize: 18.0, color: Colors.black87)),
+                              Text((data[index]["cantidad"].toString()),
+                                  style: TextStyle(
+                                      fontSize: 18.0, color: Colors.black87)),
 
-                              Text(data[index]["nombreTitular"],
+                              Text((data[index]["status"].toString()),
                                   style: TextStyle(
                                       fontSize: 18.0, color: Colors.black87)),
-                              Text(data[index]["nombreLocal"],
+                              Text((data[index]["fecha_pedido"].toString()),
                                   style: TextStyle(
                                       fontSize: 18.0, color: Colors.black87)),
-                              Text(data[index]["direccionLocal"],
-                                  style: TextStyle(
-                                      fontSize: 18.0, color: Colors.black87)),
-                              Text(data[index]["referenciaLocal"],
+                              Text((data[index]["fecha_aprox_entrega"].toString()),
                                   style: TextStyle(
                                       fontSize: 18.0, color: Colors.black87)),
                             ],
                           ),
                           onPressed: () {
-                            var id = data[index]["id"];
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => PedidosPorCliente(id)));
+
 
                           }, //OnPressed
                         ) //FlatButton
@@ -156,4 +164,3 @@ class _HomeEmpresaState extends State<HomeEmpresa> {
     );
   }
 }
-

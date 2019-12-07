@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ineed/pages/Home.dart';
 import 'package:ineed/pages/Homeregistro.dart';
-
+import 'package:ineed/pages/HomeEmpresa.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -94,7 +94,7 @@ class _LoginState extends State<Login> {
                     onPressed: (){
                         print("Iniciar sesion");
                         if(_emailController.text =="admin" && _passwordController.text == "admin" ){
-
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => HomeEmpresa()));
 
                         }else if(_emailController.text =="cliente" && _passwordController.text == "cliente"){
                           Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
