@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:ineed/pages/Homeregistro.dart';
 
-class RegistroLocal extends StatefulWidget {
+class RegistroEmpresa extends StatefulWidget {
   @override
-  _RegistroLocalState createState() => new _RegistroLocalState();
+  _RegistroEmpresaState createState() => new _RegistroEmpresaState();
 }
 
-class _RegistroLocalState extends State<RegistroLocal> {
+class _RegistroEmpresaState extends State<RegistroEmpresa> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -46,57 +46,7 @@ class _RegistroLocalState extends State<RegistroLocal> {
                     ),
                     Padding(
                       padding: EdgeInsets.fromLTRB(45.0, 5.0, 30.0, 0.0),
-                      child: Text("Nombre completo",
-                        style: TextStyle(
-                          fontSize: 15.0,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(45.0, 5.0, 45.0, 0.0),
-                      child: TextField(
-                        decoration: InputDecoration(
-                            border: OutlineInputBorder(borderRadius: BorderRadius.circular(25.0)),
-                            contentPadding: EdgeInsets.fromLTRB(10.0, 30.0, 0.0, 0.0)
-                        ),
-                        style: TextStyle(
-                          fontSize: 12.0,
-                          color: Colors.grey,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(45.0, 10.0, 45.0, 0.0),
-                      child: Text(
-                        "Nombre local",
-                        style: TextStyle(
-                          fontSize: 15.0,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(45.0, 5.0, 45.0, 0.0),
-                      child: TextField(
-                        decoration: InputDecoration(
-                            border: OutlineInputBorder(borderRadius: BorderRadius.circular(25.0)),
-                            contentPadding: EdgeInsets.fromLTRB(10.0, 30.0, 0.0, 0.0)
-                        ),
-                        style: TextStyle(
-                          fontSize: 12.0,
-                          color: Colors.grey,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(45.0, 10.0, 45.0, 0.0),
-                      child: Text(
-                        "Numero telefonico",
+                      child: Text("Nombre de distribuidora",
                         style: TextStyle(
                           fontSize: 15.0,
                           color: Colors.black,
@@ -146,7 +96,7 @@ class _RegistroLocalState extends State<RegistroLocal> {
                     Padding(
                       padding: EdgeInsets.fromLTRB(45.0, 10.0, 45.0, 0.0),
                       child: Text(
-                        "Direccion",
+                        "Marca",
                         style: TextStyle(
                           fontSize: 15.0,
                           color: Colors.black,
@@ -159,7 +109,7 @@ class _RegistroLocalState extends State<RegistroLocal> {
                       child: TextField(
                         decoration: InputDecoration(
                             border: OutlineInputBorder(borderRadius: BorderRadius.circular(25.0)),
-                            contentPadding: EdgeInsets.fromLTRB(10.0, 70.0, 0.0, 0.0)
+                            contentPadding: EdgeInsets.fromLTRB(10.0, 30.0, 0.0, 0.0)
                         ),
                         style: TextStyle(
                           fontSize: 12.0,
@@ -171,7 +121,32 @@ class _RegistroLocalState extends State<RegistroLocal> {
                     Padding(
                       padding: EdgeInsets.fromLTRB(45.0, 10.0, 45.0, 0.0),
                       child: Text(
-                        "Referencias cercanas",
+                        "Numero Telefonico",
+                        style: TextStyle(
+                          fontSize: 15.0,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(45.0, 5.0, 45.0, 0.0),
+                      child: TextField(
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(borderRadius: BorderRadius.circular(25.0)),
+                            contentPadding: EdgeInsets.fromLTRB(10.0, 30.0, 0.0, 0.0)
+                        ),
+                        style: TextStyle(
+                          fontSize: 12.0,
+                          color: Colors.grey,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(45.0, 10.0, 45.0, 0.0),
+                      child: Text(
+                        "Direccion",
                         style: TextStyle(
                           fontSize: 15.0,
                           color: Colors.black,
@@ -235,7 +210,7 @@ class _RegistroLocalState extends State<RegistroLocal> {
               ),
             ),
           ],
-       )
+        )
     );
   }
 }
