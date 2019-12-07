@@ -9,6 +9,8 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  var tokenempresa = '4e6929177868ab78d301f0b85083cd2d04af5f9b';
+  var tokenlocal = 'c009bf67579fd5b2c8a6ab432c8ad006af685e09';
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
@@ -91,7 +93,13 @@ class _LoginState extends State<Login> {
                           shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(15.0)),
                     onPressed: (){
                         print("Iniciar sesion");
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
+                        if(_emailController.text =="admin" && _passwordController.text == "admin" ){
+
+
+                        }else if(_emailController.text =="cliente" && _passwordController.text == "cliente"){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
+                        }
+
                     },
                   ),
                 ),

@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
 import 'dart:core';
+import 'package:ineed/pages/VistaProductos.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -15,7 +16,7 @@ class _HomeState extends State<Home> {
     getEmpresas();
   }
   final String url = 'https://9860631b.ngrok.io/distribuidora/distribuidoras/';
-  final token='4e6929177868ab78d301f0b85083cd2d04af5f9b';
+  final token='c009bf67579fd5b2c8a6ab432c8ad006af685e09';
   List data;
 
   Future<String> getEmpresas() async {
@@ -26,7 +27,6 @@ class _HomeState extends State<Home> {
           "Accept": "application/json"
         });
     setState(() {
-      print(data);
       data = json.decode(response.body);
     });
   }
@@ -87,6 +87,18 @@ class _HomeState extends State<Home> {
                   ),
                   onTap: () {},
                 ),
+                ListTile(
+                  contentPadding: EdgeInsets.fromLTRB(30, 0, 0, 0),
+                  title: Text(
+                    'Mis pedidos',
+                    style: TextStyle(color: Colors.white, fontSize: 15),
+                  ),
+                  leading: Icon(
+                    Icons.send,
+                    color: Colors.white,
+                  ),
+                  onTap: () {},
+                ),
          ]
 
             ),
@@ -110,12 +122,18 @@ class _HomeState extends State<Home> {
                         child: FlatButton(
                           child: Column(
                             children: <Widget>[
+                              Image.network(
+                              data[index]["logo"],
+                                scale: 1.3,
+                              ),
                               Text(data[index]["marca"],
                                   style: TextStyle(
                                       fontSize: 18.0, color: Colors.black87)),
                             ],
                           ),
                           onPressed: () {
+                            var id = data[index]["id"];
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => VistaProductos(id)));
 
                           }, //OnPressed
                         ) //FlatButton
@@ -131,3 +149,4 @@ class _HomeState extends State<Home> {
     );
   }
 }
+
