@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ineed/pages/Home.dart';
+import 'package:ineed/pages/Homeregistro.dart';
 
 
 class Login extends StatefulWidget {
@@ -107,6 +108,7 @@ class _LoginState extends State<Login> {
                           shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(15.0)),
                     onPressed: (){
                       print("Crear cuenta");
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => Homeregistro()));
                     },
                   ),
                 ),
