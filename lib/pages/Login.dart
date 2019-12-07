@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ineed/pages/Home.dart';
 
 
 class Login extends StatefulWidget {
@@ -15,11 +16,11 @@ class _LoginState extends State<Login> {
     return new Scaffold(
         body: new Stack(
           children: <Widget>[
-            new Container(
-              decoration: new BoxDecoration(
-                image: new DecorationImage(image: new AssetImage("assets/images/ineeds.png"), fit: BoxFit.cover,),
+              new Container(
+                decoration: new BoxDecoration(
+                  image: new DecorationImage(image: new AssetImage("assets/images/ineeds.png"), fit: BoxFit.cover,),
+                ),
               ),
-            ),
             Wrap(children: <Widget>[
               Padding(
                 padding: EdgeInsets.fromLTRB(45.0, 220.0, 30.0, 0.0),
@@ -89,6 +90,7 @@ class _LoginState extends State<Login> {
                           shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(15.0)),
                     onPressed: (){
                         print("Iniciar sesion");
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
                     },
                   ),
                 ),
