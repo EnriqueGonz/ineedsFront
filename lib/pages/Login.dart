@@ -87,7 +87,7 @@ class _LoginState extends State<Login> {
                   child: RaisedButton(
                       child: Text("Iniciar sesion",
                           style: TextStyle(color: Colors.white, fontSize: 14.0)),
-                          color: Colors.blue,
+                          color: Color.fromRGBO(69, 173, 126, 100),
                           shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(15.0)),
                     onPressed: (){
                         print("Iniciar sesion");
@@ -104,7 +104,7 @@ class _LoginState extends State<Login> {
                   child: RaisedButton(
                       child: Text("Crear una cuenta",
                           style: TextStyle(color: Colors.white, fontSize: 14.0)),
-                          color: Colors.green,
+                          color: Color.fromRGBO(69, 173, 126, 100),
                           shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(15.0)),
                     onPressed: (){
                       print("Crear cuenta");
