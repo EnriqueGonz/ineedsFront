@@ -4,6 +4,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:core';
 import 'package:ineed/pages/VistaProductos.dart';
+import 'package:ineed/pages/ActualizarPerfil.dart';
+import 'package:ineed/pages/PedidosPorCliente.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -15,7 +17,7 @@ class _HomeState extends State<Home> {
     super.initState();
     getEmpresas();
   }
-  final String url = 'https://9860631b.ngrok.io/distribuidora/distribuidoras/';
+  final String url = 'https://57507136.ngrok.io/distribuidora/distribuidoras/';
   final token='c009bf67579fd5b2c8a6ab432c8ad006af685e09';
   List data;
 
@@ -85,7 +87,9 @@ class _HomeState extends State<Home> {
                     Icons.notifications,
                     color: Colors.white,
                   ),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => ActualizarPerfil()));
+                  },
                 ),
                 ListTile(
                   contentPadding: EdgeInsets.fromLTRB(30, 0, 0, 0),
@@ -97,7 +101,9 @@ class _HomeState extends State<Home> {
                     Icons.send,
                     color: Colors.white,
                   ),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => PedidosPorCliente(1)));
+                  },
                 ),
          ]
 
