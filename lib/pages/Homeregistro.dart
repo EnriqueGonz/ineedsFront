@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ineed/pages/RegistroLocal.dart';
 
 class Homeregistro extends StatefulWidget {
   @override
@@ -37,7 +38,7 @@ class _HomeregistroState extends State<Homeregistro> {
                         shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(15.0)),
                         onPressed: (){
                           print("Registro Empresa");
-                          //Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
+
                         },
                       ),
                     ),
@@ -54,7 +55,7 @@ class _HomeregistroState extends State<Homeregistro> {
                         shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(15.0)),
                         onPressed: (){
                           print("Registro local");
-                          //Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => RegistroLocal()));
                         },
                       ),
                     ),
